@@ -1,0 +1,132 @@
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 12px;
+  color: var(--text);
+  padding: 0.25rem;
+}
+
+h1 {
+  font-size: 1.25em;
+}
+
+#bg-img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  object-fit: cover;
+  filter: blur(50px);
+  opacity: 0.7;
+  scale: 1.5;
+  z-index: -1;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+}
+
+.tag {
+  font-size: 0.6rem;
+  padding: 0.1rem 0.4rem;
+  border-radius: 20px;
+  border: 1px solid var(--text);
+}
+
+button {
+  font-size: 0.75rem;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  background: var(--text);
+  color: var(--bg);
+  border-radius: 20px;
+  width: 100%;
+  border: none;
+}
+
+button:active {
+  opacity: 0.8;
+}
+
+button:disabled {
+  opacity: 0.8;
+  cursor: not-allowed;
+}
+
+table {
+  width: 100%;
+}
+
+table td {
+  padding: 0.25rem 0.5rem 0.25rem 0;
+  /* font-weight: bold; */
+  text-align: left;
+  vertical-align: top;
+}
+
+textarea {
+  font-family: inherit;
+  width: 100%;
+  height: 5rem;
+  font-size: 1em;
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text);
+  border-radius: 5px;
+}
+
+textarea:focus {
+  outline: none;
+}
+
+input[type="range"] {
+  width: 100%;
+  height: 0.1rem;
+  accent-color: var(--text);
+  border-radius: 10px;
+  background: var(--text);
+  cursor: pointer;
+}
+
+.rating label {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+#option_btn {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  width: fit-content;
+  color: var(--text);
+  font-size: 0.7rem;
+  background: rgba(255, 255, 255, 0.25);
+  border: none;
+  cursor: pointer;
+  z-index: 100;
+}
+
+#setOption {
+  margin: 0;
+  z-index: 10;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: var(--text);
+  background: rgba(0, 0, 0, 0.5);
+  cursor: default;
+  backdrop-filter: blur(1px);
+}
