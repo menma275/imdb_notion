@@ -1,50 +1,26 @@
-# React + TypeScript + Vite
+# IMDb to Notion
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This extension allows you to save IMDb information to Notion.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Save IMDb information to Notion
+- Save multiple IMDb information to Notion
+- Save IMDb information to Notion with your own comment and rating
 
-## Expanding the ESLint configuration
+## Installation
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+1. Clone the repository
+2. Run `npm install`
+3. Run `npm run build`
+4. Load the extension in Chrome by navigating to `chrome://extensions/`, enabling "Developer mode", and clicking "Load unpacked."
+5. Select the `dist` folder
+6. Open the extension popup by clicking the extension icon in the Chrome toolbar
+7. Set your API token and database ID in the settings
 
-- Configure the top-level `parserOptions` property like this:
+### What is API token and database ID?
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+- API token: The token you get from Notion
+- Database ID: The ID of the database you want to save the IMDb information to
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+- Details: [Notion API](https://developers.notion.com/docs/create-a-notion-integration)
