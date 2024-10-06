@@ -47,12 +47,9 @@ async function handleSaveData(data: any) {
         ],
       },
       Country: {
-        rich_text: [
-          {
-            type: "text",
-            text: { content: data.imdbInfo.country || "" },
-          },
-        ],
+        select: {
+          name: data.imdbInfo.country || "",
+        },
       },
       Genre: {
         select: {
