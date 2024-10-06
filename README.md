@@ -2,10 +2,13 @@
 
 This extension allows you to save IMDb information to Notion.
 
+<!-- 画像を挿入 -->
+
+![IMDb to Notion](readme_img/imdb.png)
+![IMDb to Notion](readme_img/notion.png)
+
 ## Features
 
-- Save IMDb information to Notion
-- Save multiple IMDb information to Notion
 - Save IMDb information to Notion with your own comment and rating
 
 ## Installation
