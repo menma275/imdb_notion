@@ -7,7 +7,7 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  --accent: rgb(245, 197, 24);
+  --accent: #f5c518;
   --bg: #000;
   --text: #fff;
 }
