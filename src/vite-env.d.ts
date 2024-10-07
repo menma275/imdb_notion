@@ -11,6 +11,9 @@ type Datas = {
   imdbInfo: IMDbInfo;
   rating: number | null;
   comment: string | null;
+  watchedOn: WatchedOn | null;
 };
 
-export { IMDbInfo, Datas };
+type WatchedOn = "Netflix" | "Prime Video" | "Theater" | null;
+
+export { IMDbInfo, Datas, WatchedOn };

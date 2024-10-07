@@ -1,4 +1,4 @@
-import type { IMDbInfo, Datas } from "./vite-env";
+import type { IMDbInfo, Datas, WatchedOn } from "./vite-env";
 import { useEffect, useState } from "react";
 import "./App.css";
 
@@ -17,6 +17,7 @@ function App() {
           imdbInfo: data.imdbInfo,
           rating: 5,
           comment: "",
+          watchedOn: "Theater",
         },
       ]);
       chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
@@ -78,6 +79,15 @@ function App() {
     });
   };
 
+  const handleWatchedOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value as WatchedOn;
+    setDatas((prev) => {
+      const newDatas = [...prev];
+      newDatas[0].watchedOn = value;
+      return newDatas;
+    });
+  };
+
   const handleSettings = () => {
     chrome.runtime.openOptionsPage();
   };
@@ -114,6 +124,44 @@ function App() {
                       {tag}
                     </span>
                   ))}
+                </td>
+              </tr>
+              <tr>
+                <td>WatchedOn</td>
+                <td className="watched-on">
+                  <div>
+                    <label>
+                      <input
+                        type="radio"
+                        value="Theater"
+                        checked={datas[0].watchedOn === "Theater"}
+                        onChange={handleWatchedOnChange}
+                      />
+                      Theater
+                    </label>
+                  </div>
+                  <div>
+                    <label>
+                      <input
+                        type="radio"
+                        value="Netflix"
+                        checked={datas[0].watchedOn === "Netflix"}
+                        onChange={handleWatchedOnChange}
+                      />
+                      Netflix
+                    </label>
+                  </div>
+                  <div>
+                    <label>
+                      <input
+                        type="radio"
+                        value="Prime Video"
+                        checked={datas[0].watchedOn === "Prime Video"}
+                        onChange={handleWatchedOnChange}
+                      />
+                      Prime Video
+                    </label>
+                  </div>
                 </td>
               </tr>
               <tr className="rating">

@@ -9,7 +9,7 @@ chrome.runtime.onMessage.addListener((message, _sender, sendResponse) => {
         sendResponse({ status: "success" });
       })
       .catch((error) => {
-        console.error("Notionへの保存中にエラーが発生しました:", error);
+        console.error("Error saving to Notion:", error);
         sendResponse({ status: "error", message: error.message });
       });
     return true; // 非同期レスポンスを示すために必要
@@ -23,7 +23,7 @@ async function handleSaveData(data: any) {
   ]);
 
   if (!data) {
-    throw new Error("データが提供されていません");
+    throw new Error("No data provided");
   }
 
   const notion = new Client({
@@ -62,6 +62,11 @@ async function handleSaveData(data: any) {
             name: tag,
           })) || [],
       },
+      WatchedOn: {
+        select: {
+          name: data.watchedOn || "",
+        },
+      },
       Rating: {
         number: data.rating || 5,
       },
@@ -76,5 +81,5 @@ async function handleSaveData(data: any) {
     },
   });
 
-  console.log("Notionに正常に保存されました");
+  console.log("Successfully saved to Notion");
 }
