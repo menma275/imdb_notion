@@ -85,7 +85,7 @@ function App() {
   return (
     <main>
       {currentUrl.includes("https://www.imdb.com/title/") && imdbInfo ? (
-        <div>
+        <div className="container">
           <img
             id="bg-img"
             src={imdbInfo.imageLink || ""}
