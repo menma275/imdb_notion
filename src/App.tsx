@@ -105,6 +105,10 @@ function App() {
           <table>
             <tbody>
               <tr>
+                <td>Original Title</td>
+                <td>{imdbInfo.originalTitle}</td>
+              </tr>
+              <tr>
                 <td>Director</td>
                 <td>{imdbInfo.director}</td>
               </tr>

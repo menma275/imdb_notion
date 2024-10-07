@@ -1,5 +1,6 @@
 type IMDbInfo = {
   title: string | null;
+  originalTitle: string | null;
   director: string | null;
   tags: string[] | null;
   country: string | null;

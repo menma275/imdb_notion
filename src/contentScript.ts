@@ -1,13 +1,10 @@
 import type { IMDbInfo } from "./vite-env";
 
 function getInfo() {
-  const mainTitle = document.querySelector(
-    "span.hero__primary-text"
-  )?.textContent;
+  const title = document.querySelector("span.hero__primary-text")?.textContent;
   const originalTitle = document
     .querySelector(".sc-ec65ba05-1.fUCCIx")
     ?.textContent?.replace("Original title: ", "");
-  const title = originalTitle ? originalTitle : mainTitle;
 
   const directorItem = document.querySelector("li.ipc-metadata-list__item");
   let director;
@@ -35,18 +32,27 @@ function getInfo() {
     ".ipc-media__img.ipc-media--dynamic img.ipc-image"
   )?.src;
 
-  return { title, director, tags, country, isTVSeries, imageLink };
+  return {
+    title,
+    originalTitle,
+    director,
+    tags,
+    country,
+    isTVSeries,
+    imageLink,
+  };
 }
 
 const storageKey = "imdbInfo";
 
 const info = getInfo();
-const { title, director, tags, country, isTVSeries, imageLink } =
+const { title, originalTitle, director, tags, country, isTVSeries, imageLink } =
   info as IMDbInfo;
 
 chrome.storage.local.set({
   [storageKey]: {
     title: title || "",
+    originalTitle: originalTitle || "",
     director: director || "",
     tags: tags || [],
     country: country || "",

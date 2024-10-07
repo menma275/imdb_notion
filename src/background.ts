@@ -38,6 +38,14 @@ async function handleSaveData(data: any) {
       Title: {
         title: [{ text: { content: data.imdbInfo.title || "" } }],
       },
+      OriginalTitle: {
+        rich_text: [
+          {
+            type: "text",
+            text: { content: data.imdbInfo.originalTitle || "" },
+          },
+        ],
+      },
       Director: {
         rich_text: [
           {
